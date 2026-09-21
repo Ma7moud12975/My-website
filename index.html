@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  window.__loader_debug = [];
+  window.addEventListener('error', (e) => {
+    window.__loader_debug.push('ERR: ' + e.message + ' at ' + e.filename + ':' + e.lineno);
+    console.error('GLOBAL_ERR:', e.message, e.filename, e.lineno);
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    window.__loader_debug.push('REJ: ' + (e.reason?.message || e.reason));
+    console.error('UNHANDLED_REJ:', e.reason);
+  });
+</script>
+
+  <meta charset="utf-8">
+  <title>Mahmoud Ayman Waheed — AI Engineer & Computer Vision Specialist</title>
+  <meta name="description" content="Official portfolio of Mahmoud Ayman Waheed — AI Engineer & Bioinformatics graduate from Delta University. Awarded 2nd Prize ($3,000) at Huawei Developer Competition 2025 and Global Top 30 in WCHL among 12,000+ projects.">
+  <meta name="author" content="Mahmoud Ayman Waheed">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1">
+  <meta property="og:title" content="Mahmoud Ayman Waheed — AI Engineer">
+  <meta property="og:description" content="AI Engineer & Computer Vision Specialist. 2nd Place Huawei Developer Competition 2025 & Global Top 30 WCHL.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#8052ff">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+
+  <link rel="preload" as="font" href="/fonts/PPNeueMontreal-Light.woff2" crossorigin="">
+  <link rel="preload" as="font" href="/fonts/PPNeueMontreal-Regular.woff2" crossorigin="">
+  <link rel="preload" as="font" href="/fonts/PPNeueMontreal-SemiBold.woff2" crossorigin="">
+  <link rel="stylesheet" href="/css/style.css" defer="defer">
+
+  <style>
+    /* Custom enhancements for Mahmoud's Portfolio that harmonize with Dala style */
+    .project-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 32px;
+      margin-bottom: 40px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .project-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+    }
+    .project-card:hover {
+      border-color: rgba(128, 82, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    .project-card__image-wrap {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #080808;
+      position: relative;
+    }
+    .project-card__image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-card__image-wrap img {
+      transform: scale(1.02);
+    }
+    .project-card__floating-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 184, 41, 0.4);
+      color: #ffb829;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 9999px;
+    }
+    .badge-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      background: rgba(128, 82, 255, 0.12);
+      color: #a07bff;
+      border: 1px solid rgba(128, 82, 255, 0.25);
+    }
+    .badge-tag.amber {
+      background: rgba(255, 184, 41, 0.12);
+      color: #ffc44d;
+      border-color: rgba(255, 184, 41, 0.25);
+    }
+    .btn-secondary {
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+    .btn-secondary:hover {
+      border-color: #ffffff !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+    }
+    .header__logo-custom {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .header__logo-custom svg {
+      width: 28px;
+      height: 32px;
+    }
+
+    /* Hero profile pill */
+    .hero-profile-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 9999px;
+      padding: 5px 16px 5px 5px;
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .hero-profile-pill:hover {
+      border-color: rgba(128, 82, 255, 0.5);
+      background: rgba(128, 82, 255, 0.08);
+    }
+    .hero-profile-pill__img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #8052ff;
+      display: block;
+    }
+    .hero-profile-pill__name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .hero-profile-pill__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 8px #00ff88;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* About Section Grid & Portrait Card */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 56px;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      width: 100%;
+    }
+    @media (max-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+      }
+    }
+    .about-portrait-card {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(128, 82, 255, 0.15) 0%, rgba(0, 0, 0, 0.8) 100%);
+      border: 1px solid rgba(128, 82, 255, 0.35);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8), 0 0 50px rgba(128, 82, 255, 0.18);
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .about-portrait-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(128, 82, 255, 0.6);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9), 0 0 70px rgba(128, 82, 255, 0.3);
+    }
+    .about-portrait-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 26px;
+    }
+    .about-portrait-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.92) 80%);
+    }
+    .about-metric-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 18px 20px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .about-metric-box:hover {
+      border-color: rgba(128, 82, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Honors & Recognition Luxury Grid */
+    .honors-section {
+      position: relative;
+      z-index: 2;
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+    }
+    .honors-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 900px) {
+      .honors-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    .honor-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 36px 32px;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .honor-card:hover {
+      border-color: rgba(128, 82, 255, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(128, 82, 255, 0.12);
+    }
+    .honor-card__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      .honor-card__header {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+    .honor-card__pyramid {
+      width: 64px;
+      height: 64px;
+      min-width: 64px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .honor-card__body {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+    .honor-card__title {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    @media (max-width: 600px) {
+      .honor-card__title {
+        font-size: 20px;
+      }
+    }
+    .honor-card__subtitle {
+      font-size: 13px;
+      color: #8052ff;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .honor-card__desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #a0a0a0;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    /* Layout & Viewport Polish */
+    .landing {
+      min-height: 100vh !important;
+      padding-top: clamp(3rem, 9vh, 6rem) !important;
+      padding-bottom: 5rem !important;
+      overflow: visible !important;
+    }
+    .footer {
+      min-height: 100vh !important;
+      padding-bottom: 9rem !important;
+      overflow: visible !important;
+    }
+    .footer__head {
+      margin-bottom: 3.5rem !important;
+    }
+  </style>
+</head>
+<body>
+  <button class="nav-toggle js-nav-toggle">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="nav-toggle__cross js-nav-toggle-cross">
+        <path d="M2.56 2.535L13.4386 13.4136" stroke="white" stroke-miterlimit="10"/>
+        <path d="M13.4389 2.58871L2.56034 13.4673" stroke="white" stroke-miterlimit="10"/>
+      </g>
+      <g class="nav-toggle__burger js-nav-toggle-burger">
+        <path d="M0.31 3.35L15.6946 3.35" stroke="white" stroke-miterlimit="10"/>
+        <path d="M0.31 7.96426L15.6946 7.96426" stroke="white" stroke-miterlimit="10"/>
+        <path d="M0.31 12.579L15.6946 12.579" stroke="white" stroke-miterlimit="10"/>
+      </g>
+    </svg>
+    <span class="sr">Toggle Mobile Navigation</span>
+  </button>
+
+  <div class="header-blur-block"></div>
+
+  <header class="header js-header">
+    <div class="header__bg js-header-bg"><div class="header__bg-inner"></div></div>
+    <div class="header__inner js-header-inner">
+      <button class="header__logo js-header-logo header__logo-custom" anchor-link="landing">
+        <svg viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="brand-grad" x1="0" y1="0" x2="32" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#8052ff"/>
+              <stop offset="1" stop-color="#15846e"/>
+            </linearGradient>
+          </defs>
+          <path d="M2 30L15 3L30 30L16 22Z" fill="url(#brand-grad)"/>
+        </svg>
+        <span class="header__logo-text-group js-header-logo-text-group">
+          <span class="header__logo-text js-header-logo-text">mahmoud<span style="color: #8052ff;">.</span></span>
+        </span>
+      </button>
+
+      <div class="header__cta mr-4">
+        <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Let's talk" href="mailto:ma8819496@gmail.com">
+          <span class="btn__text pointer-events-none">Let's Talk</span>
+          <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+        </a>
+      </div>
+
+      <nav class="nav js-nav">
+        <div class="nav__bg js-nav-bg"><div class="nav__bg-inner"></div></div>
+        <ul class="nav__list js-nav-list">
+          <li class="nav__item js-nav-item" section-name="landing">
+            <a href="/#landing" aria-label="Home" class="nav__link js-nav-link" anchor-link="landing">Home</a>
+          </li>
+          <li class="nav__item js-nav-item" section-name="about">
+            <a href="/#about" aria-label="About" class="nav__link js-nav-link" anchor-link="about">About</a>
+          </li>
+          <li class="nav__item js-nav-item" section-name="manifesto">
+            <a href="/#manifesto" aria-label="Vision" class="nav__link js-nav-link" anchor-link="manifesto">Vision</a>
+          </li>
+          <li class="nav__item js-nav-item" section-name="projects">
+            <a href="/#projects" aria-label="Projects" class="nav__link js-nav-link" anchor-link="projects">Work</a>
+          </li>
+          <li class="nav__item js-nav-item" section-name="team">
+            <a href="/#team" aria-label="Milestones" class="nav__link js-nav-link" anchor-link="team">Milestones</a>
+          </li>
+          <li class="nav__item js-nav-item">
+            <a class="nav__link js-nav-link" aria-label="Download CV" href="/Mahmoud_Ayman_Waheed_CV.pdf" download>CV ↗</a>
+          </li>
+          <li class="nav__cta">
+            <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Let's talk" href="mailto:ma8819496@gmail.com">
+              <span class="btn__text pointer-events-none">Let's Talk</span>
+              <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div role="dialog" aria-modal="false" class="cookie-notice fixed js-cookie-notice">
+    <div class="d-flex items-center">
+      <div class="flex-grow pr-1">
+        <div class="cookie-notice__body t-500">Mahmoud Ayman Waheed — AI Engineer & Computer Vision Specialist.</div>
+      </div>
+      <div class="flex-no-shrink d-flex">
+        <button type="button" class="btn t-16 t-lh-1.2 t-14@xs t-lh-1.4@xs t-16@sm t-lh-1.2@sm -t-ls-0.025 t-600 t-uppercase js-cookie-notice-toggle">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-loader js-site-loader">
+    <div class="site-loader__background"></div>
+    <div class="site-loader__content">
+      <div class="site-loader__main">
+        <div class="site-loader__spinner js-site-loader-spinner">
+          <svg class="site-loader__spinner-svg js-site-loader-spinner-svg" width="142" height="141" viewBox="0 0 142 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="63.6035" width="14.7917" height="14.7917" fill="white"/>
+            <rect x="63.6035" y="125.729" width="14.7917" height="14.7917" fill="white"/>
+            <rect x="142" y="62.125" width="14.7917" height="14.7917" transform="rotate(90 142 62.125)" fill="white"/>
+            <rect x="16.2715" y="62.125" width="14.7917" height="16.2708" transform="rotate(90 16.2715 62.125)" fill="white"/>
+          </svg>
+        </div>
+        <div class="site-loader__heading js-site-loader-heading">
+          <div class="site-loader__heading-text"><div class="site-loader__heading-inner js-site-loader-heading-text">Engineering intelligent systems.</div></div>
+          <div class="site-loader__heading-text"><div class="site-loader__heading-inner js-site-loader-heading-text">Mahmoud Ayman Waheed</div></div>
+        </div>
+      </div>
+      <div class="site-loader__info d-flex justify-between items-end">
+        <div class="site-loader__loading">
+          <div class="d-flex overflow-hidden"><div class="site-loader__loading-text js-site-loader-loading-text">LOADING</div></div>
+          <span class="site-loader__ellipsis js-site-loader-ellipses"><div class="site-loader__ellipsis-wrapper js-site-loader-ellipses-wrapper"><span style="display: inline;">.</span> <span style="display: inline;">.</span> <span style="display: inline;">.</span></div></span>
+        </div>
+        <div class="site-loader__completed js-site-loader-completed-text"><span>Completed</span></div>
+        <div class="site-loader__progress js-site-loader-progress"><span class="js-site-loader-progress-digit"></span> <span class="js-site-loader-progress-digit"></span> <span class="js-site-loader-progress-digit">0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-transition-mask-bg js-nav-transition-mask-bg"></div>
+  <div class="nav-transition-mask js-nav-transition-mask">
+    <div class="nav-transition-mask__spinner js-nav-transition-mask-spinner">
+      <svg class="nav-transition-mask__spinner-svg js-nav-transition-mask-spinner-svg" width="142" height="141" viewBox="0 0 142 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="63.6035" width="14.7917" height="14.7917" fill="white"/>
+        <rect x="63.6035" y="125.729" width="14.7917" height="14.7917" fill="white"/>
+        <rect x="142" y="62.125" width="14.7917" height="14.7917" transform="rotate(90 142 62.125)" fill="white"/>
+        <rect x="16.2715" y="62.125" width="14.7917" height="16.2708" transform="rotate(90 16.2715 62.125)" fill="white"/>
+      </svg>
+    </div>
+  </div>
+
+  <div asscroll-container>
+    <main>
+      <div anchor-target="landing"></div>
+      
+      <!-- HERO SECTION -->
+      <div class="section landing js-section" section-name="landing">
+        <h2 class="landing__title t-56 t-80@xs t-104@sm t-150@md t-lh-0.9 -t-ls-0.03 t-400 mb-1.5 t-lh-1.1 mb-1" animate-from="preset: 'splitTextRotateIn', delay: 0, duration: 1, scrollTrigger: { children: 'span' }">
+          <span class="d-block">Engineering</span>
+          <span class="d-block">intelligent</span>
+          <span class="d-block">systems.</span>
+        </h2>
+        <div class="mobile-blur mt-0 mb-auto">
+          <div class="landing__body">
+            <div class="t-16 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-yellow" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 1, duration: 1">
+              AI Engineer · Computer Vision & Embedded Robotics
+            </div>
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 1, duration: 1">
+              Hi, I'm Mahmoud Ayman. An AI & Bioinformatics graduate from Delta University. Winner of 2nd Prize ($3,000) at Huawei Developer Competition 2025 and ranked Global Top 30 among 12,000+ projects in the World Computer Hacker League. I build perception models and autonomous machines that see, understand, and act in the physical world.
+            </p>
+            <div style="margin-top: 28px; padding-bottom: 20px; overflow: visible;">
+              <div class="d-flex" style="gap: 16px; flex-wrap: wrap;" animate-from="yPercent: 120, rotate: 2, ease: 'expo.out', duration: 1, delay: 1.5">
+                <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Explore Projects" anchor-link="projects" href="/#projects">
+                  <span class="btn__text pointer-events-none">Explore Projects</span>
+                  <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+                </a>
+                <a class="btn btn-secondary t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Download CV" href="/Mahmoud_Ayman_Waheed_CV.pdf" download>
+                  <span class="btn__text pointer-events-none">Download CV ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT THE ENGINEER SECTION -->
+      <div class="section js-section" section-name="about" anchor-target="about" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 24px; margin: 40px 0;">
+        <div style="max-width: 1280px; width: 100%; margin: 0 auto; background: rgba(8, 8, 8, 0.82); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 36px; padding: 56px 48px; box-shadow: 0 32px 90px rgba(0, 0, 0, 0.95), 0 0 50px rgba(128, 82, 255, 0.1);">
+          <div class="about-grid" style="padding: 0; max-width: 100%;">
+            
+            <!-- LEFT: PORTRAIT CARD -->
+            <div class="about-portrait-wrap">
+              <div class="about-portrait-card">
+                <img src="/mahmoud-portrait-hd.jpg" alt="Mahmoud Ayman Waheed - AI Engineer" class="about-portrait-img">
+                <div class="about-portrait-overlay">
+                  <div class="t-20 t-600 t-lh-1.2 -t-ls-0.02" style="color: #ffffff;">Mahmoud Ayman Waheed</div>
+                  <div class="t-14 t-400 -t-ls-0.01 t-grey-4" style="margin-top: 4px;">AI Engineer & Bioinformatics · 1st Class Honors</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: BIO & CREDENTIALS -->
+            <div class="about-text-wrap mobile-blur">
+              <div class="t-14 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-purple">
+                About The Engineer · AI & Computer Vision
+              </div>
+              <h2 class="t-40 t-lh-1 t-56@sm t-lh-1.1@sm -t-ls-0.03 t-400 mb-1.5" style="color: #ffffff;" animate-from="preset: 'splitTextRotateIn', scrollTrigger: { start: 'top bottom' }">
+                Perception. Precision. Tangible impact.
+              </h2>
+              <p class="t-20 t-lh-1.5 -t-ls-0.02 t-200" style="color: #cccccc; margin-bottom: 24px;">
+                From sub-30ms biomechanical kinematics running strictly on-device to multi-axis autonomous robotic exploration, my engineering focuses where machine learning models transcend screens and interface with real-world physics.
+              </p>
+
+              <!-- 4 METRIC HIGHLIGHTS -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px;">
+                <div class="about-metric-box">
+                  <div class="t-24 t-600 -t-ls-0.02" style="color: #ffb829;">$3,000 USD</div>
+                  <div class="t-12 t-uppercase t-ls-0.04 t-grey-4" style="margin-top: 4px;">Huawei 2025 2nd Prize</div>
+                </div>
+                <div class="about-metric-box">
+                  <div class="t-24 t-600 -t-ls-0.02" style="color: #8052ff;">Top 30 Global</div>
+                  <div class="t-12 t-uppercase t-ls-0.04 t-grey-4" style="margin-top: 4px;">WCHL · 12,000+ Teams</div>
+                </div>
+                <div class="about-metric-box">
+                  <div class="t-24 t-600 -t-ls-0.02" style="color: #189b81;">&lt; 30ms</div>
+                  <div class="t-12 t-uppercase t-ls-0.04 t-grey-4" style="margin-top: 4px;">On-Device Kinematics</div>
+                </div>
+                <div class="about-metric-box">
+                  <div class="t-24 t-600 -t-ls-0.02" style="color: #ffffff;">1st Honors</div>
+                  <div class="t-12 t-uppercase t-ls-0.04 t-grey-4" style="margin-top: 4px;">Faculty of Artificial Intelligence</div>
+                </div>
+              </div>
+
+              <!-- CTA BUTTONS -->
+              <div class="d-flex" style="gap: 16px; flex-wrap: wrap;">
+                <a class="btn t-14 t-ls-0.025 t-600 t-uppercase" href="/Mahmoud_Ayman_Waheed_CV.pdf" download>
+                  <span class="btn__text pointer-events-none">Download Full CV ↗</span>
+                  <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+                </a>
+                <a class="btn btn-secondary t-14 t-ls-0.025 t-600 t-uppercase" href="https://www.linkedin.com/in/mahmoud-ayman-041462361/" target="_blank" rel="noopener">
+                  <span class="btn__text pointer-events-none">LinkedIn ↗</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MANIFESTO / VISION CHAPTERS -->
+      <div class="js-section" section-name="manifesto">
+        <div anchor-target="manifesto"></div>
+        <div class="manifesto--introduction-container" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0.5, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: '.js-manifesto-p'" animate-mq="smMax">
+          
+          <div class="section manifesto--introduction">
+            <div class="manifesto__body" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: '.js-manifesto-p'" animate-mq="sm">
+              <p class="t-24 t-lh-1.3 -t-ls-0.03 t-48@sm t-lh-1.2@sm t-400 js-manifesto-p">
+                Engineering beyond simulations: bringing computer vision and intelligent perception to life in resource-constrained environments.
+              </p>
+              <p class="t-24 t-lh-1.3 -t-ls-0.03 t-48@sm t-lh-1.2@sm t-400 js-manifesto-p">
+                Every millisecond of inference latency and every millimeter of kinematic precision matters when machines interact with physical environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="section manifesto--introduction">
+            <div class="manifesto__body" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: '.js-manifesto-p'" animate-mq="sm">
+              <p class="t-24 t-lh-1.3 -t-ls-0.03 t-48@sm t-lh-1.2@sm t-400 js-manifesto-p">
+                AtosFit was born as an ambitious graduation capstone: replacing complex multi-sensor motion capture labs with single standard phone cameras.
+              </p>
+              <p class="t-24 t-lh-1.3 -t-ls-0.03 t-48@sm t-lh-1.2@sm t-400 js-manifesto-p">
+                Recognized with 2nd Prize ($3,000 USD) at Huawei Developer Competition 2025 Northern Africa and ranked Top 30 Globally among 12,000+ projects in WCHL.
+              </p>
+            </div>
+          </div>
+
+          <div class="section manifesto--introduction">
+            <div class="manifesto__body" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: '.js-manifesto-p'" animate-mq="sm">
+              <p class="t-24 t-lh-1.3 -t-ls-0.03 t-48@sm t-lh-1.2@sm t-400 js-manifesto-p">
+                Robotics requires end-to-end integration: mechanical kinematics, embedded microcontrollers, dual flame sensors, and real-time YOLOv9 edge vision.
+              </p>
+              <p class="t-24 t-lh-1.3 -t-ls-0.03 t-48@sm t-lh-1.2@sm t-400 js-manifesto-p">
+                100% privacy-first: biomechanical kinematics and visual inferences run entirely on-device, never streaming private camera feeds to external servers.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FEATURE SHOWCASE 1: ATOSFIT -->
+      <div class="section section--tall manifesto manifesto--section items-end@md js-section" section-name="manifesto">
+        <div class="manifesto__inner mobile-blur">
+          <div class="mb-1">
+            <span class="badge-tag amber">Huawei 2025 2nd Place · $3,000</span>
+            <span class="badge-tag">WCHL Global Top 30</span>
+          </div>
+          <h2 class="manifesto__title t-32 t-lh-1.3 t-56@sm t-lh-0.9@sm t-lh-1.2@sm -t-ls-0.03 t-400 mb-1 mb-2@sm" animate-from="preset: 'splitTextRotateIn', scrollTrigger: { start: 'top bottom' }">
+            AtosFit — Computer vision in motion
+          </h2>
+          <div class="manifesto__body" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0.5, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: 'p'">
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200">
+              An on-device computer vision coach that analyzes workout form, calculates kinematic joint angles, and validates full range-of-motion in real time with sub-30ms latency.
+            </p>
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200">
+              Eliminates training injuries through immediate voice and visual feedback, complemented by an autonomous nutrition generator and 24/7 conversational fitness coach.
+            </p>
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200">
+              Built as a Graduation Capstone at Delta University and validated on international stages in front of Huawei and global technology judges.
+            </p>
+            <div style="margin-top: 24px;">
+              <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" href="https://atosfit.com" target="_blank" rel="noopener">
+                <span class="btn__text pointer-events-none">Launch atosfit.com ↗</span>
+                <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURE SHOWCASE 2: ROBOTICS -->
+      <div class="section section--tall manifesto manifesto--section items-start@md js-section" section-name="manifesto">
+        <div class="manifesto__inner mobile-blur">
+          <div class="mb-1">
+            <span class="badge-tag">ESP32-CAM</span>
+            <span class="badge-tag">YOLOv9</span>
+            <span class="badge-tag">Arduino Robotics</span>
+          </div>
+          <h2 class="manifesto__title t-32 t-lh-1.3 t-56@sm t-lh-0.9@sm t-lh-1.2@sm -t-ls-0.03 t-400 mb-1 mb-2@sm" animate-from="preset: 'splitTextRotateIn', scrollTrigger: { start: 'top bottom' }">
+            Autonomous Robotics & Edge AI
+          </h2>
+          <div class="manifesto__body" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0.5, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: 'p'">
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200">
+              Robotics bridges algorithm and physics. The Quadpod Spider Robot combines multi-axis inverse kinematics with ESP32-CAM wireless perception for agile omnidirectional exploration.
+            </p>
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200">
+              The Autonomous Firefighter Robot pairs dual optical flame sensors, ultrasonic distance mapping, and high-pressure extinguishing systems with automated emergency response logic.
+            </p>
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200">
+              From circuit design and schematic wiring to real-time embedded C++ and MicroPython firmware, engineering resilient physical intelligence.
+            </p>
+            <div style="margin-top: 24px;">
+              <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" anchor-link="projects" href="/#projects">
+                <span class="btn__text pointer-events-none">Explore All Projects ↗</span>
+                <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS SHOWCASE SECTION -->
+      <div class="section js-section" section-name="projects" anchor-target="projects" style="padding: 100px 0;">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 0 24px;">
+          
+          <div style="margin-bottom: 60px;">
+            <div class="t-16 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-yellow">Selected Works</div>
+            <h2 class="t-56 t-lh-1 t-64@sm t-lh-1.2@sm t-104@md t-lh-1.1@md -t-ls-0.03 t-400">
+              Things I've built.
+            </h2>
+            <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200" style="color: #9a9a9a; max-width: 640px; margin-top: 16px;">
+              Real interfaces, real prototypes, and award-winning AI architectures running on-device.
+            </p>
+          </div>
+
+          <!-- PROJECT 1: ATOSFIT -->
+          <article class="project-card">
+            <div class="project-card__image-wrap">
+              <span class="project-card__floating-badge">🏆 Huawei 2nd Place · $3,000</span>
+              <img src="/atosfit-desktop.png" alt="AtosFit AI Coach Web Interface" loading="lazy">
+            </div>
+            <div>
+              <div class="mb-1">
+                <span class="badge-tag amber">Huawei 2025</span>
+                <span class="badge-tag">WCHL Top 30</span>
+                <span class="badge-tag">Computer Vision</span>
+                <span class="badge-tag">Kinematics</span>
+              </div>
+              <h3 class="t-40 t-lh-1 t-48@sm -t-ls-0.03 t-400 mb-1" style="color: #ffffff;">
+                AtosFit — AI Vision Coach
+              </h3>
+              <p class="t-18 t-lh-1.5 t-200" style="color: #bdbdbd; margin-bottom: 24px;">
+                An international award-winning computer vision fitness platform. Analyzes workout form in real time using camera streams with sub-30ms joint angle kinematics, automated repetition counting, audio guidance, and an AI nutrition planner.
+              </p>
+              <div class="d-flex" style="gap: 16px; flex-wrap: wrap;">
+                <a class="btn t-14 t-ls-0.025 t-600 t-uppercase" href="https://atosfit.com" target="_blank" rel="noopener">
+                  <span class="btn__text pointer-events-none">Live Demo (atosfit.com) ↗</span>
+                  <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+                </a>
+                <a class="btn btn-secondary t-14 t-ls-0.025 t-600 t-uppercase" href="/huawei-winner-main.jpg" target="_blank">
+                  <span class="btn__text pointer-events-none">View Award ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: QUADPOD ROBOT -->
+          <article class="project-card">
+            <div class="project-card__image-wrap">
+              <img src="/quadpod-robot.png" alt="Quadpod Autonomous Spider Robot" loading="lazy">
+            </div>
+            <div>
+              <div class="mb-1">
+                <span class="badge-tag">YOLOv9</span>
+                <span class="badge-tag">ESP32-CAM</span>
+                <span class="badge-tag">Robotic Locomotion</span>
+                <span class="badge-tag">MicroPython</span>
+              </div>
+              <h3 class="t-40 t-lh-1 t-48@sm -t-ls-0.03 t-400 mb-1" style="color: #ffffff;">
+                Quadpod — Autonomous Spider Robot
+              </h3>
+              <p class="t-18 t-lh-1.5 t-200" style="color: #bdbdbd; margin-bottom: 24px;">
+                A multi-legged autonomous robot engineered for adaptive terrain navigation. Integrates inverse kinematic locomotion algorithms with real-time ESP32-CAM wireless visual perception and obstacle mapping.
+              </p>
+              <div class="d-flex" style="gap: 16px;">
+                <a class="btn t-14 t-ls-0.025 t-600 t-uppercase" href="mailto:ma8819496@gmail.com?subject=Inquiry regarding Quadpod Robot">
+                  <span class="btn__text pointer-events-none">Request Technical Paper ↗</span>
+                  <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: FIREFIGHTER ROBOT -->
+          <article class="project-card">
+            <div class="project-card__image-wrap">
+              <img src="/firefighter-robot.png" alt="Autonomous Firefighter Robot" loading="lazy">
+            </div>
+            <div>
+              <div class="mb-1">
+                <span class="badge-tag">Arduino</span>
+                <span class="badge-tag">Dual Flame Sensing</span>
+                <span class="badge-tag">Embedded C++</span>
+                <span class="badge-tag">Schematic Design</span>
+              </div>
+              <h3 class="t-40 t-lh-1 t-48@sm -t-ls-0.03 t-400 mb-1" style="color: #ffffff;">
+                Autonomous Firefighter Robot
+              </h3>
+              <p class="t-18 t-lh-1.5 t-200" style="color: #bdbdbd; margin-bottom: 24px;">
+                An autonomous emergency response rover equipped with dual infrared flame detection sensors, ultrasonic obstacle avoidance, motor driver H-bridges, and an active pump nozzle system.
+              </p>
+              <div class="d-flex" style="gap: 16px;">
+                <a class="btn btn-secondary t-14 t-ls-0.025 t-600 t-uppercase" href="/firefighter-schematic.png" target="_blank">
+                  <span class="btn__text pointer-events-none">View Circuit Schematic ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- TEAM / MILESTONES SLIDER -->
+      <div class="section js-section js-team-section mb-1" section-name="team" anchor-target="team">
+        <div class="team">
+          <div class="team__head js-team-head" animate-mq="sm" animate-from="y: '-5vw', scrollTrigger: { scrub: 0.5, once: false, start: 'top bottom' }">
+            <h2 class="t-56 t-lh-1 t-64@sm t-lh-1.2@sm t-104@md t-lh-1.1@md -t-ls-0.03 t-400 mb-2@xs mb-2.5@sm mb-3@md" animate-from="preset: 'splitTextRotateIn', scrollTrigger: { start: 'top bottom' }">
+              Journey & Milestones
+            </h2>
+          </div>
+
+          <div class="team-slider js-slider">
+            <div class="team-slider__slides-container">
+              <ul class="team-slider__slides js-slides">
+                <!-- Slide 0 -->
+                <li class="team-card js-slide" slide-id="Team Spark Infinity">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/huawei-team-hall.jpg" alt="Team Spark Infinity Core Engineering Team" loading="lazy"></div>
+                </li>
+                <!-- Slide 1 -->
+                <li class="team-card js-slide" slide-id="Huawei Award">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/huawei-winner-main.jpg" alt="Huawei Developer Competition 2nd Prize Ceremony" loading="lazy"></div>
+                </li>
+                <!-- Slide 2 -->
+                <li class="team-card js-slide" slide-id="WCHL Stage">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/wchl-presentation.jpg" alt="World Computer Hacker League Stage Presentation" loading="lazy"></div>
+                </li>
+                <!-- Slide 3 (repeat cycle) -->
+                <li class="team-card js-slide" slide-id="Team Spark Infinity">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/huawei-team-hall.jpg" alt="Team Spark Infinity Core Engineering Team" loading="lazy"></div>
+                </li>
+                <!-- Slide 4 -->
+                <li class="team-card js-slide" slide-id="Huawei Award">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/huawei-winner-main.jpg" alt="Huawei Developer Competition 2nd Prize Ceremony" loading="lazy"></div>
+                </li>
+                <!-- Slide 5 -->
+                <li class="team-card js-slide" slide-id="WCHL Stage">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/wchl-presentation.jpg" alt="World Computer Hacker League Stage Presentation" loading="lazy"></div>
+                </li>
+                <!-- Slide 6 (repeat cycle) -->
+                <li class="team-card js-slide" slide-id="Team Spark Infinity">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/huawei-team-hall.jpg" alt="Team Spark Infinity Core Engineering Team" loading="lazy"></div>
+                </li>
+                <!-- Slide 7 -->
+                <li class="team-card js-slide" slide-id="Huawei Award">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/huawei-winner-main.jpg" alt="Huawei Developer Competition 2nd Prize Ceremony" loading="lazy"></div>
+                </li>
+                <!-- Slide 8 -->
+                <li class="team-card js-slide" slide-id="WCHL Stage">
+                  <div class="team-card__inner"><img class="team-card__image js-slide-image" src="/wchl-presentation.jpg" alt="World Computer Hacker League Stage Presentation" loading="lazy"></div>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="team-slider__content">
+              <li class="team-slider__content__item">
+                <div class="team-card__content js-slide-content" slide-id="Team Spark Infinity">
+                  <span class="t-16 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-purple js-role">AtosFit Core Team · Capstone Distinction</span>
+                  <h3 class="t-40 t-lh-1 t-56@md t-lh-0.9@md t-lh-1.2@md -t-ls-0.03 t-400 mb-1 js-name">Team Spark Infinity</h3>
+                  <div class="team-card__social">
+                    <a class="team-card__social__link js-social-icon" href="https://www.linkedin.com/in/mahmoud-ayman-041462361/" target="_blank" rel="noopener">
+                      <span class="sr">Linkedin</span> <svg class="team-card__social__icon team-card__social__icon--linkedin"><use xlink:href="/images/svgsprite.svg#linkedin"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="team-slider__content__item">
+                <div class="team-card__content js-slide-content" slide-id="Huawei Award">
+                  <span class="t-16 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-purple js-role">Northern Africa Finals · USD $3,000 Award</span>
+                  <h3 class="t-40 t-lh-1 t-56@md t-lh-0.9@md t-lh-1.2@md -t-ls-0.03 t-400 mb-1 js-name">Huawei Developer Winner</h3>
+                  <div class="team-card__social">
+                    <a class="team-card__social__link js-social-icon" href="https://www.linkedin.com/in/mahmoud-ayman-041462361/" target="_blank" rel="noopener">
+                      <span class="sr">Linkedin</span> <svg class="team-card__social__icon team-card__social__icon--linkedin"><use xlink:href="/images/svgsprite.svg#linkedin"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="team-slider__content__item">
+                <div class="team-card__content js-slide-content" slide-id="WCHL Stage">
+                  <span class="t-16 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-purple js-role">Top 30 Globally · 12,000+ Projects</span>
+                  <h3 class="t-40 t-lh-1 t-56@md t-lh-0.9@md t-lh-1.2@md -t-ls-0.03 t-400 mb-1 js-name">World Computer Hacker League</h3>
+                  <div class="team-card__social">
+                    <a class="team-card__social__link js-social-icon" href="https://www.linkedin.com/in/mahmoud-ayman-041462361/" target="_blank" rel="noopener">
+                      <span class="sr">Linkedin</span> <svg class="team-card__social__icon team-card__social__icon--linkedin"><use xlink:href="/images/svgsprite.svg#linkedin"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="team-slider__controls">
+              <button class="team-slider__control team-slider__previous js-slider-prev">
+                <span class="sr">Previous</span>
+                <div class="team-slider__control-bg js-slider-prev-bg"></div>
+                <div class="team-slider__control-hover js-slider-prev-hover"></div>
+                <svg><use xlink:href="/images/svgsprite.svg#arrow"></use></svg>
+              </button>
+              <button class="team-slider__control team-slider__next js-slider-next">
+                <span class="sr">Next</span>
+                <div class="team-slider__control-bg js-slider-next-bg"></div>
+                <div class="team-slider__control-hover js-slider-next-hover"></div>
+                <svg><use xlink:href="/images/svgsprite.svg#arrow"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <div animate-from="y: '-5vw', scrollTrigger: { trigger: '.js-team-head', scrub: 0.5, once: false, start: 'top bottom' }">
+            <h3 class="t-36 t-lh-1 -t-ls-0.03 t-400 mt-5@sm" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0.5, duration: 0.8, scrollTrigger: { start: 'top bottom' }">
+              Collaborate with me.
+            </h3>
+            <div class="team__body" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 1, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: 'p'">
+              <p class="t-20 t-lh-1.5 -t-ls-0.03 t-400">
+                I am actively collaborating with engineering teams, innovative research groups, and pioneering AI startups who push boundaries in real-time computer vision and physical robotics. Reach out directly at <a href="mailto:ma8819496@gmail.com">ma8819496@gmail.com</a>.
+              </p>
+              <p class="t-20 t-lh-1.5 -t-ls-0.03 t-400">
+                You can also download my full academic and professional CV <a href="/Mahmoud_Ayman_Waheed_CV.pdf" download>here</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HONORS & RECOGNITION (LUXURY 2x2 CARD GRID WITH 3D ROTATING PYRAMIDS) -->
+        <div class="honors-section">
+          
+          <div class="mb-4 mb-5@md" animate-from="y: '2vw', scrollTrigger: { trigger: '.honors-section', scrub: 0.5, once: false, start: 'top bottom' }">
+            <h2 class="t-56 t-lh-1 t-64@sm t-lh-0.9@sm t-104@md -t-ls-0.03 t-400 mb-2@xs mb-1@sm mb-1.5@md" animate-from="preset: 'splitTextRotateIn', rotate: 7, duration: 0.8, scrollTrigger: { start: 'top bottom' }">
+              Honors & Recognition
+            </h2>
+            <div animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 0.3, duration: 0.8, scrollTrigger: { start: 'top bottom' }, children: 'p'">
+              <p class="t-20 t-lh-1.5 -t-ls-0.03 t-400" style="max-width: 720px; color: #a0a0a0;">
+                Honored on international and national stages for technical rigor, innovative computer vision architectures, and real-world edge deployment.
+              </p>
+            </div>
+          </div>
+
+          <div class="honors-grid">
+            
+            <!-- Honor 1: Delta University for Science & Technology -->
+            <div class="honor-card">
+              <div class="honor-card__header">
+                <div class="honor-card__pyramid" dom2webgl="c:Pyramid" material-color="0xFFB829" start-x="1000" parallax-speed="0"></div>
+                <div class="honor-card__body">
+                  <div class="honor-card__subtitle">Dean's List · Academic Distinction</div>
+                  <div class="honor-card__title">Delta University (DUST)</div>
+                  <div class="honor-card__desc">1st Class Honors in Faculty of Artificial Intelligence, with repeated top academic rankings across algorithms, deep learning, and embedded robotics.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Honor 2: World Computer Hacker League -->
+            <div class="honor-card">
+              <div class="honor-card__header">
+                <div class="honor-card__pyramid" dom2webgl="c:Pyramid" material-color="0x189B81" start-x="-1000" parallax-speed="0"></div>
+                <div class="honor-card__body">
+                  <div class="honor-card__subtitle">Global Top 30 · International</div>
+                  <div class="honor-card__title">World Computer Hacker League</div>
+                  <div class="honor-card__desc">Ranked in the top 30 internationally among 12,000+ participating engineering projects and teams worldwide.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Honor 3: Huawei Developer Competition -->
+            <div class="honor-card">
+              <div class="honor-card__header">
+                <div class="honor-card__pyramid" dom2webgl="c:Pyramid" material-color="0xFFB829" start-x="1200" parallax-speed="0"></div>
+                <div class="honor-card__body">
+                  <div class="honor-card__subtitle">Northern Africa Finals · 2025</div>
+                  <div class="honor-card__title">Huawei Developer Competition</div>
+                  <div class="honor-card__desc">Awarded 2nd Prize with a USD $3,000 ceremonial check for real-time edge AI posture correction and computer vision pipeline excellence.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Honor 4: Team Spark Infinity -->
+            <div class="honor-card">
+              <div class="honor-card__header">
+                <div class="honor-card__pyramid" dom2webgl="c:Pyramid" material-color="0x926AFF" start-x="-1000" parallax-speed="0"></div>
+                <div class="honor-card__body">
+                  <div class="honor-card__subtitle">Capstone Distinction · Team Lead</div>
+                  <div class="honor-card__title">Team Spark Infinity (AtosFit)</div>
+                  <div class="honor-card__desc">Led architecture and hardware-software integration for the full AtosFit AI rehabilitation smart wear system, earning distinction from academic and industry review panels.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER / CONTACT -->
+      <div class="section footer js-section" section-name="contact" anchor-target="contact">
+        <div class="footer__head">
+          <h2 class="t-40 t-lh-1 t-48@sm t-lh-1.2@sm t-64@md t-lh-1.1@md -t-ls-0.03 t-400 mb-2" animate-from="preset: 'splitTextRotateIn', scrollTrigger: { start: 'top bottom' }">
+            Have an idea or a technical challenge? Let's build together.
+          </h2>
+          <div class="d-flex justify-center" style="gap: 16px; flex-wrap: wrap;">
+            <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Start a conversation" href="mailto:ma8819496@gmail.com">
+              <span class="btn__text pointer-events-none">Start A Conversation</span>
+              <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
+            </a>
+            <a class="btn btn-secondary t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Download CV" href="/Mahmoud_Ayman_Waheed_CV.pdf" download>
+              <span class="btn__text pointer-events-none">Download CV ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__bar">
+          <div class="footer__logo">
+            <button class="header__logo-custom" anchor-link="landing" style="font-size: 24px;">
+              <span>mahmoud<span style="color: #8052ff;">.</span></span>
+            </button>
+          </div>
+          <div class="footer__copyright">
+            <span class="footer__copyright__item">© 2026 Mahmoud Ayman Waheed.</span>
+            <span class="footer__copyright__item">All rights reserved.</span>
+          </div>
+          <ul class="footer__nav">
+            <li class="footer__nav__item js-nav-item" section-name="landing">
+              <button class="footer__nav__link t-16 t-lh-1.2 t-14@xs t-lh-1.4@xs t-16@sm t-lh-1.2@sm -t-ls-0.025 t-600 t-uppercase js-nav-link" anchor-link="landing">Home</button>
+            </li>
+            <li class="footer__nav__item js-nav-item" section-name="about">
+              <button class="footer__nav__link t-16 t-lh-1.2 t-14@xs t-lh-1.4@xs t-16@sm t-lh-1.2@sm -t-ls-0.025 t-600 t-uppercase js-nav-link" anchor-link="about">About</button>
+            </li>
+            <li class="footer__nav__item js-nav-item" section-name="manifesto">
+              <button class="footer__nav__link t-16 t-lh-1.2 t-14@xs t-lh-1.4@xs t-16@sm t-lh-1.2@sm -t-ls-0.025 t-600 t-uppercase js-nav-link" anchor-link="manifesto">Vision</button>
+            </li>
+            <li class="footer__nav__item js-nav-item" section-name="projects">
+              <button class="footer__nav__link t-16 t-lh-1.2 t-14@xs t-lh-1.4@xs t-16@sm t-lh-1.2@sm -t-ls-0.025 t-600 t-uppercase js-nav-link" anchor-link="projects">Work</button>
+            </li>
+            <li class="footer__nav__item js-nav-item" section-name="team">
+              <button class="footer__nav__link t-16 t-lh-1.2 t-14@xs t-lh-1.4@xs t-16@sm t-lh-1.2@sm -t-ls-0.025 t-600 t-uppercase js-nav-link" anchor-link="team">Milestones</button>
+            </li>
+          </ul>
+          <div class="footer__social">
+            <a class="footer__social__link" href="https://www.linkedin.com/in/mahmoud-ayman-041462361/" rel="noopener" target="_blank">
+              <span class="sr">LinkedIn</span>
+              <svg class="footer__social__icon footer__social__icon--linkedin"><use xlink:href="/images/svgsprite.svg#linkedin"></use></svg>
+            </a>
+            <a class="footer__social__link" href="https://x.com/MahmoudAymam4" rel="noopener" target="_blank">
+              <span class="sr">Twitter</span>
+              <svg class="footer__social__icon footer__social__icon--twitter"><use xlink:href="/images/svgsprite.svg#twitter"></use></svg>
+            </a>
+            <a class="footer__social__link" href="mailto:ma8819496@gmail.com" rel="noopener" target="_blank">
+              <span class="sr">Email</span>
+              <svg class="footer__social__icon footer__social__icon--email"><use xlink:href="/images/svgsprite.svg#email"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- THE BACKGROUND THREE.JS CANVAS -->
+  <div class="fixed fill w-1/1 h-1/1 z-negative user-select-none pointer-events-none">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script src="/scripts/manifest.js"></script>
+  <script src="/scripts/vendor.js"></script>
+  <script src="/scripts/theme.js"></script>
+  <script>
+    (function() {
+      function syncASScroll() {
+        try {
+          if (window.ASS && window.ASS.controller) {
+            window.ASS.controller.onResize();
+          }
+        } catch (e) {
+          console.warn('Sync ASScroll error:', e);
+        }
+      }
+
+      // Sync on page load and intervals
+      window.addEventListener('load', function() {
+        syncASScroll();
+        setTimeout(syncASScroll, 100);
+        setTimeout(syncASScroll, 500);
+        setTimeout(syncASScroll, 1200);
+        setTimeout(syncASScroll, 2500);
+      });
+
+      // Synchronize whenever any image finishes loading
+      document.querySelectorAll('img').forEach(function(img) {
+        if (!img.complete) {
+          img.addEventListener('load', syncASScroll);
+          img.addEventListener('error', syncASScroll);
+        }
+      });
+
+      // ResizeObserver on the scroll container
+      if (typeof ResizeObserver !== 'undefined') {
+        const ro = new ResizeObserver(function() {
+          syncASScroll();
+        });
+        const main = document.querySelector('main');
+        if (main) ro.observe(main);
+      }
+    })();
+  </script>
+</body>
+</html>
