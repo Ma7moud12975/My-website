@@ -341,6 +341,419 @@
     .footer__head {
       margin-bottom: 3.5rem !important;
     }
+
+    /* ============================================================
+       MOBILE RESPONSIVENESS & CREATIVE CRAFT ENHANCEMENTS
+       ============================================================ */
+    
+    /* Base Reset & Overflow Safeguards */
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Hero Tech Badge */
+    .hero-tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 184, 41, 0.08);
+      border: 1px solid rgba(255, 184, 41, 0.28);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #ffb829;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px rgba(255, 184, 41, 0.12);
+    }
+    .hero-tech-badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ffb829;
+      box-shadow: 0 0 10px #ffb829;
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    /* About Section Responsive Wrappers */
+    .about-section-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 12vh, 120px) clamp(16px, 4vw, 24px);
+      margin: 40px 0;
+    }
+    .about-card-inner {
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(8, 8, 12, 0.84);
+      backdrop-filter: blur(36px);
+      -webkit-backdrop-filter: blur(36px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 36px;
+      padding: clamp(28px, 6vw, 56px) clamp(20px, 5vw, 48px);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.95), 0 0 60px rgba(128, 82, 255, 0.12);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    .about-card-inner:hover {
+      border-color: rgba(128, 82, 255, 0.3);
+      box-shadow: 0 32px 100px rgba(0, 0, 0, 0.98), 0 0 80px rgba(128, 82, 255, 0.2);
+    }
+    .about-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    /* Mobile Breakpoint Rules (<= 768px) */
+    @media (max-width: 768px) {
+      /* Mobile Hero */
+      .landing {
+        min-height: 100vh !important;
+        padding-top: max(5.5rem, calc(env(safe-area-inset-top) + 4.5rem)) !important;
+        padding-bottom: 3.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+      .landing__title {
+        font-size: clamp(2.6rem, 11vw, 4rem) !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.035em !important;
+        margin-bottom: 1.25rem !important;
+      }
+      .landing__body p {
+        font-size: clamp(1rem, 4.2vw, 1.18rem) !important;
+        line-height: 1.65 !important;
+        color: rgba(225, 225, 235, 0.88) !important;
+        margin-bottom: 1.5rem !important;
+        max-width: 100% !important;
+      }
+      .hero-tech-badge {
+        font-size: 11px !important;
+        padding: 5px 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .hero-cta-group {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+      }
+      .hero-cta-group .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        min-height: 50px !important;
+        font-size: 15px !important;
+      }
+
+      /* Mobile Header & Hamburger */
+      .header__cta {
+        display: none !important;
+      }
+      .header__inner {
+        padding: 12px 18px !important;
+      }
+      .nav-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50% !important;
+        background: rgba(20, 20, 28, 0.8) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.16) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: fixed !important;
+        top: 14px !important;
+        right: 18px !important;
+        z-index: 1200 !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
+      }
+      .nav-toggle:active {
+        transform: scale(0.92);
+      }
+      .nav-toggle svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .nav {
+        position: fixed !important;
+        inset: 0 !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        z-index: 1100 !important;
+      }
+      .nav__bg {
+        height: 100% !important;
+        background: rgba(6, 6, 10, 0.96) !important;
+        backdrop-filter: blur(32px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+      }
+      .nav__bg-inner {
+        background-color: transparent !important;
+      }
+      .nav__list {
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 16px !important;
+        padding: max(4rem, env(safe-area-inset-top)) 24px max(2.5rem, env(safe-area-inset-bottom)) !important;
+      }
+      .nav__link {
+        font-size: clamp(24px, 6.5vw, 34px) !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.02em !important;
+        color: #ffffff !important;
+        padding: 8px 16px !important;
+        display: inline-block !important;
+        transition: transform 0.2s ease, color 0.2s ease !important;
+      }
+      .nav__link:hover, .nav__link:active {
+        color: #ffb829 !important;
+        transform: scale(1.06) !important;
+      }
+      .nav__cta {
+        margin-top: 18px !important;
+        width: 100% !important;
+        max-width: 280px !important;
+      }
+      .nav__cta .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 50px !important;
+      }
+
+      /* Mobile About Card */
+      .about-section-wrap {
+        padding: 30px 16px !important;
+        min-height: auto !important;
+        margin: 20px 0 !important;
+      }
+      .about-card-inner {
+        padding: 28px 18px !important;
+        border-radius: 26px !important;
+      }
+      .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        padding: 0 !important;
+      }
+      .about-portrait-wrap {
+        max-width: 260px !important;
+        margin: 0 auto !important;
+      }
+      .about-portrait-card {
+        border-radius: 22px !important;
+      }
+      .about-metrics-grid {
+        gap: 10px !important;
+        margin-bottom: 22px !important;
+      }
+      .about-metric-box {
+        padding: 14px 12px !important;
+        border-radius: 14px !important;
+      }
+      .about-metric-box .t-24 {
+        font-size: 19px !important;
+      }
+      .about-metric-box .t-12 {
+        font-size: 10.5px !important;
+        letter-spacing: 0.03em !important;
+      }
+      .about-text-wrap h2 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem) !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1rem !important;
+      }
+      .about-text-wrap p {
+        font-size: 14.5px !important;
+        line-height: 1.65 !important;
+      }
+      .about-text-wrap .d-flex {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+      }
+      .about-text-wrap .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 48px !important;
+      }
+
+      /* Manifesto / Vision Section Mobile */
+      .manifesto__body p,
+      .manifesto--introduction p {
+        font-size: clamp(1.05rem, 4.2vw, 1.35rem) !important;
+        line-height: 1.6 !important;
+      }
+      .manifesto__title {
+        font-size: clamp(1.8rem, 6.8vw, 2.5rem) !important;
+        line-height: 1.15 !important;
+      }
+
+      /* Projects Mobile */
+      .project-card {
+        padding: 20px 16px !important;
+        border-radius: 22px !important;
+        gap: 20px !important;
+        margin-bottom: 24px !important;
+      }
+      .project-card__image-wrap {
+        border-radius: 16px !important;
+      }
+      .project-card h3 {
+        font-size: clamp(1.4rem, 5.8vw, 1.9rem) !important;
+        margin-bottom: 8px !important;
+      }
+      .project-card p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 18px !important;
+      }
+      .project-card .d-flex {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+      }
+      .project-card .d-flex .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        min-height: 48px !important;
+      }
+
+      /* Milestones Mobile */
+      .team {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      .team-slider__content h3 {
+        font-size: clamp(1.5rem, 5.8vw, 2.2rem) !important;
+        line-height: 1.15 !important;
+      }
+      .team__head h2 {
+        font-size: clamp(2rem, 8vw, 3.2rem) !important;
+      }
+
+      /* Honors Section Mobile */
+      .honors-section {
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+      }
+      .honors-section h2 {
+        font-size: clamp(2rem, 8vw, 3.2rem) !important;
+      }
+      .honors-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .honor-card {
+        padding: 22px 18px !important;
+        border-radius: 20px !important;
+      }
+      .honor-card__header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+      }
+      .honor-card__pyramid {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+      }
+      .honor-card__title {
+        font-size: 18px !important;
+        line-height: 1.25 !important;
+      }
+      .honor-card__subtitle {
+        font-size: 11px !important;
+        margin-bottom: 4px !important;
+      }
+      .honor-card__desc {
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+      }
+
+      /* Footer Mobile */
+      .footer {
+        min-height: auto !important;
+        padding-top: 3.5rem !important;
+        padding-bottom: max(3.5rem, calc(env(safe-area-inset-bottom) + 2rem)) !important;
+      }
+      .footer__head h2 {
+        font-size: clamp(1.8rem, 6.5vw, 2.5rem) !important;
+        line-height: 1.15 !important;
+        text-align: center !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .footer__head .d-flex {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 12px !important;
+      }
+      .footer__head .btn {
+        width: 100% !important;
+        min-height: 50px !important;
+        justify-content: center !important;
+      }
+      .footer__bar {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+        margin-top: 3rem !important;
+      }
+      .footer__nav {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px 18px !important;
+      }
+      .footer__social {
+        justify-content: center !important;
+      }
+
+      /* Cookie Banner Mobile */
+      .cookie-notice {
+        bottom: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+        padding: 8px 12px !important;
+        border-radius: 9999px !important;
+        background: rgba(10, 10, 15, 0.92) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        font-size: 11px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8) !important;
+      }
+      .cookie-notice__body {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+      .cookie-notice .btn {
+        font-size: 11px !important;
+        padding: 4px 12px !important;
+        min-height: 28px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -470,7 +883,7 @@
   </div>
 
   <div asscroll-container>
-    <main>
+    <main asscroll>
       <div anchor-target="landing"></div>
       
       <!-- HERO SECTION -->
@@ -482,14 +895,17 @@
         </h2>
         <div class="mobile-blur mt-0 mb-auto">
           <div class="landing__body">
-            <div class="t-16 t-lh-1.2 t-ls-0.05 t-600 t-uppercase mb-1 t-yellow" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 1, duration: 1">
-              AI Engineer · Computer Vision & Embedded Robotics
+            <div class="mb-1" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 1, duration: 1">
+              <div class="hero-tech-badge">
+                <span class="hero-tech-badge__dot"></span>
+                <span>AI Engineer · Computer Vision & Embedded Robotics</span>
+              </div>
             </div>
             <p class="t-24 t-lh-1.5 -t-ls-0.02 t-200" animate-from="preset: 'splitTextRotateIn', rotate: 7, delay: 1, duration: 1">
               Hi, I'm Mahmoud Ayman. An AI & Bioinformatics graduate from Delta University. Winner of 2nd Prize ($3,000) at Huawei Developer Competition 2025 and ranked Global Top 30 among 12,000+ projects in the World Computer Hacker League. I build perception models and autonomous machines that see, understand, and act in the physical world.
             </p>
-            <div style="margin-top: 28px; padding-bottom: 20px; overflow: visible;">
-              <div class="d-flex" style="gap: 16px; flex-wrap: wrap;" animate-from="yPercent: 120, rotate: 2, ease: 'expo.out', duration: 1, delay: 1.5">
+            <div class="hero-cta-wrapper" style="margin-top: 28px; padding-bottom: 20px; overflow: visible;">
+              <div class="d-flex hero-cta-group" style="gap: 16px; flex-wrap: wrap;" animate-from="yPercent: 120, rotate: 2, ease: 'expo.out', duration: 1, delay: 1.5">
                 <a class="btn t-16 t-14@xs t-16@sm t-ls-0.025 t-600 t-uppercase" aria-label="Explore Projects" anchor-link="projects" href="/#projects">
                   <span class="btn__text pointer-events-none">Explore Projects</span>
                   <div class="btn__hover pointer-events-none" aria-hidden="true"></div>
@@ -504,9 +920,9 @@
       </div>
 
       <!-- ABOUT THE ENGINEER SECTION -->
-      <div class="section js-section" section-name="about" anchor-target="about" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 24px; margin: 40px 0;">
-        <div style="max-width: 1280px; width: 100%; margin: 0 auto; background: rgba(8, 8, 8, 0.82); backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 36px; padding: 56px 48px; box-shadow: 0 32px 90px rgba(0, 0, 0, 0.95), 0 0 50px rgba(128, 82, 255, 0.1);">
-          <div class="about-grid" style="padding: 0; max-width: 100%;">
+      <div class="section js-section about-section-wrap" section-name="about" anchor-target="about">
+        <div class="about-card-inner">
+          <div class="about-grid">
             
             <!-- LEFT: PORTRAIT CARD -->
             <div class="about-portrait-wrap">
@@ -532,7 +948,7 @@
               </p>
 
               <!-- 4 METRIC HIGHLIGHTS -->
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px;">
+              <div class="about-metrics-grid">
                 <div class="about-metric-box">
                   <div class="t-24 t-600 -t-ls-0.02" style="color: #ffb829;">$3,000 USD</div>
                   <div class="t-12 t-uppercase t-ls-0.04 t-grey-4" style="margin-top: 4px;">Huawei 2025 2nd Prize</div>
@@ -1033,6 +1449,7 @@
   <script src="/scripts/theme.js"></script>
   <script>
     (function() {
+      // 1. Sync ASScroll
       function syncASScroll() {
         try {
           if (window.ASS && window.ASS.controller) {
@@ -1043,7 +1460,6 @@
         }
       }
 
-      // Sync on page load and intervals
       window.addEventListener('load', function() {
         syncASScroll();
         setTimeout(syncASScroll, 100);
@@ -1052,7 +1468,6 @@
         setTimeout(syncASScroll, 2500);
       });
 
-      // Synchronize whenever any image finishes loading
       document.querySelectorAll('img').forEach(function(img) {
         if (!img.complete) {
           img.addEventListener('load', syncASScroll);
@@ -1060,7 +1475,6 @@
         }
       });
 
-      // ResizeObserver on the scroll container
       if (typeof ResizeObserver !== 'undefined') {
         const ro = new ResizeObserver(function() {
           syncASScroll();
@@ -1068,6 +1482,36 @@
         const main = document.querySelector('main');
         if (main) ro.observe(main);
       }
+
+      // 2. Mobile Nav Auto-Close on Link Click
+      document.querySelectorAll('.js-nav-link, .nav__link, [anchor-link]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          const toggle = document.querySelector('.js-nav-toggle');
+          const cross = document.querySelector('.js-nav-toggle-cross');
+          if (toggle && cross && window.getComputedStyle(cross).display === 'block') {
+            toggle.click();
+          }
+        });
+      });
+
+      // 3. Cookie Notice Dismissal & Persistence
+      try {
+        const cookieNotice = document.querySelector('.js-cookie-notice');
+        if (localStorage.getItem('mahmoud_cookie_accepted') === '1' && cookieNotice) {
+          cookieNotice.style.display = 'none';
+        }
+        const cookieBtn = document.querySelector('.js-cookie-notice-toggle');
+        if (cookieBtn) {
+          cookieBtn.addEventListener('click', function() {
+            localStorage.setItem('mahmoud_cookie_accepted', '1');
+            if (cookieNotice) {
+              cookieNotice.style.opacity = '0';
+              setTimeout(() => { cookieNotice.style.display = 'none'; }, 300);
+            }
+          });
+        }
+      } catch (e) {}
+
     })();
   </script>
 </body>
